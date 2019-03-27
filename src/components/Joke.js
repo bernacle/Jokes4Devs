@@ -56,9 +56,14 @@ export default class Joke extends Component {
     return (
       <View style={styles.container}>
         {isLoading ? (
-          <ActivityIndicator size="large" color="#EE3253" />
+          <ActivityIndicator size="large" color="#ccba3f" />
         ) : (
-          <Card style={styles.card} title={`${joke.type} jokes`.toUpperCase()}>
+          <Card
+            containerStyle={{ borderRadius: 10 }}
+            style={styles.card}
+            title={`${joke.type} jokes`.toUpperCase()}
+            titleStyle={{ color: '#ccba3f' }}
+          >
             <Text style={styles.setup}>{joke.setup}</Text>
             <Text style={styles.punchline}>{joke.punchline}</Text>
           </Card>
@@ -71,7 +76,7 @@ export default class Joke extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#EE3253',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -86,18 +91,9 @@ const styles = StyleSheet.create({
   },
   punchline: {
     color: 'black',
-    marginTop: 30
+    marginTop: 15
   },
   card: {
     flex: 1
   }
 });
-
-// secondary: {
-//     ...COMMON,
-//     backgroundColor: "#EE3253",
-//     backgroundDarker: "#ccba3f",
-//     textColor: "#FFE11D",
-//     borderWidth: 1,
-//     borderColor: "#FFE11D"
-//   },
