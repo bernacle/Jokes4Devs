@@ -58,15 +58,20 @@ export default class Joke extends Component {
         {isLoading ? (
           <ActivityIndicator size="large" color="#ccba3f" />
         ) : (
-          <Card
-            containerStyle={{ borderRadius: 10 }}
-            style={styles.card}
-            title={`${joke.type} jokes`.toUpperCase()}
-            titleStyle={{ color: '#ccba3f' }}
-          >
-            <Text style={styles.setup}>{joke.setup}</Text>
-            <Text style={styles.punchline}>{joke.punchline}</Text>
-          </Card>
+          <View>
+            <Text style={styles.text}>Shake for new Joke!</Text>
+            <Card
+              containerStyle={{ borderRadius: 10 }}
+              style={styles.card}
+              title={`${joke.type} jokes`.toUpperCase()}
+              titleStyle={{ color: '#ccba3f' }}
+            >
+              <Text style={styles.setup}>{joke.setup.toUpperCase()}</Text>
+              <Text style={styles.punchline}>
+                {joke.punchline.toUpperCase()}
+              </Text>
+            </Card>
+          </View>
         )}
       </View>
     );
@@ -95,5 +100,9 @@ const styles = StyleSheet.create({
   },
   card: {
     flex: 1
+  },
+  text: {
+    textAlign: 'center',
+    color: 'white'
   }
 });
